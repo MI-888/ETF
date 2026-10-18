@@ -233,15 +233,19 @@ def main():
     flow_sell = flow.get("top_sell") or []
     flow_as_of = flow.get("as_of") or "-"
 
-    top_yield_etf = max(etfs, key=lambda e: e["dividend_yield_pct_est"], default=None)
-    top_gainer = green["top"][0] if green["top"] else None
+    etfs_with_change = [e for e in etfs if e.get("change_pct") is not None]
+    up_count = sum(1 for e in etfs_with_change if e["change_pct"] > 0)
+    down_count = sum(1 for e in etfs_with_change if e["change_pct"] < 0)
+    flat_count = len(etfs_with_change) - up_count - down_count
+    top_up_etf = max(etfs_with_change, key=lambda e: e["change_pct"], default=None)
+    top_down_etf = min(etfs_with_change, key=lambda e: e["change_pct"], default=None)
 
     stat_cards = f"""
     <div class="stat-row">
-      <div class="stat"><div class="stat-num">{len(etfs)}</div><div class="stat-label">符合條件 ETF</div></div>
-      <div class="stat"><div class="stat-num">{top_yield_etf['dividend_yield_pct_est']:.2f}%</div><div class="stat-label">最高推估殖利率</div><div class="stat-sub">{esc(top_yield_etf['name'])}({esc(top_yield_etf['code'])})</div></div>
-      <div class="stat"><div class="stat-num">{top_gainer['pct']:+.2f}%</div><div class="stat-label">綠能股單日漲幅王</div><div class="stat-sub">{esc(top_gainer['name'])}({esc(top_gainer['code'])})</div></div>
-    </div>""" if top_yield_etf and top_gainer else ""
+      <div class="stat"><div class="stat-num">{up_count}漲 {down_count}跌 {flat_count}平</div><div class="stat-label">今日 ETF 漲跌家數</div></div>
+      <div class="stat"><div class="stat-num gain-pill">▲ {top_up_etf['change_pct']:.2f}%</div><div class="stat-label">今日領漲 ETF</div><div class="stat-sub">{esc(top_up_etf['name'])}({esc(top_up_etf['code'])})</div></div>
+      <div class="stat"><div class="stat-num loss-pill">▼ {top_down_etf['change_pct']:.2f}%</div><div class="stat-label">今日領跌 ETF</div><div class="stat-sub">{esc(top_down_etf['name'])}({esc(top_down_etf['code'])})</div></div>
+    </div>""" if top_up_etf and top_down_etf else ""
 
     taiex_banner = ""
     if taiex:

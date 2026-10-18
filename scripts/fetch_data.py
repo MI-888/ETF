@@ -132,13 +132,18 @@ def latest_and_next(dated_events, today):
 
 
 def fetch_etf_prices(codes):
+    """回傳 { code: {"price":, "change":, "change_pct":} }, 資料基準日"""
     data = http_get_json(STOCK_DAY_ALL_URL)
     out, as_of = {}, None
     wanted = set(codes)
     for row in data:
         if row.get("Code") in wanted:
             try:
-                out[row["Code"]] = float(row.get("ClosingPrice") or 0)
+                price = float(row.get("ClosingPrice") or 0)
+                change = float(row.get("Change") or 0)
+                prev = price - change
+                change_pct = change / prev * 100 if prev else None
+                out[row["Code"]] = {"price": price, "change": change, "change_pct": change_pct}
                 as_of = roc_to_iso(row["Date"])
             except ValueError:
                 continue
@@ -271,7 +276,10 @@ def main():
 
     candidates = []
     for code in quarterly_codes:
-        price = prices.get(code)
+        quote = prices.get(code)
+        if not quote:
+            continue
+        price = quote["price"]
         if not price:
             continue
         lot_price = price * 1000
@@ -289,6 +297,8 @@ def main():
             "code": code,
             "name": info["name"],
             "price": price,
+            "change": quote["change"],
+            "change_pct": quote["change_pct"],
             "event_count_this_year": info["event_count"],
             "dividend_yield_pct_est": yield_pct,
             "latest_distribution": latest,
