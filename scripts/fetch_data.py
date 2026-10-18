@@ -34,6 +34,8 @@ HEADERS = {"User-Agent": "Mozilla/5.0 (etf-report-bot)"}
 ETF_DIV_URL = "https://www.twse.com.tw/rwd/zh/ETF/etfDiv?response=json"
 STOCK_DAY_ALL_URL = "https://openapi.twse.com.tw/v1/exchangeReport/STOCK_DAY_ALL"
 COMPANY_INFO_URL = "https://openapi.twse.com.tw/v1/opendata/t187ap03_L"
+TAIEX_URL = "https://openapi.twse.com.tw/v1/exchangeReport/FMTQIK"
+T86_URL = "https://www.twse.com.tw/rwd/zh/fund/T86?response=json&date={date}&selectType=ALL"
 
 
 def http_get_json(url, retries=3, timeout=20):
@@ -208,6 +210,48 @@ def fetch_green_energy_top10(industry_code, top_n):
     return rows[:top_n], as_of, len(codes)
 
 
+def fetch_taiex():
+    """發行量加權股價指數(TAIEX)最新一筆收盤值與漲跌"""
+    rows = http_get_json(TAIEX_URL)
+    if not rows:
+        return None
+    last = rows[-1]
+    try:
+        value = float(str(last["TAIEX"]).replace(",", ""))
+        change = float(str(last["Change"]).replace(",", ""))
+    except (KeyError, ValueError):
+        return None
+    prev = value - change
+    pct = change / prev * 100 if prev else None
+    return {
+        "date": roc_to_iso(last["Date"]),
+        "value": value,
+        "change": change,
+        "pct": pct,
+    }
+
+
+def fetch_institutional_flow(date_iso, top_n):
+    """三大法人(外資+投信+自營商)當日買賣超排行,回傳買超/賣超各前 top_n 檔(單位:張)"""
+    date_str = date_iso.replace("-", "")
+    data = http_get_json(T86_URL.format(date=date_str), retries=2)
+    rows = data.get("data", []) if isinstance(data, dict) else []
+    flows = []
+    for r in rows:
+        try:
+            code = r[0].strip()
+            name = r[1].strip()
+            net_shares = int(r[18].replace(",", ""))
+        except (IndexError, ValueError, AttributeError):
+            continue
+        flows.append({"code": code, "name": name, "net_lots": round(net_shares / 1000)})
+
+    flows.sort(key=lambda x: -x["net_lots"])
+    top_buy = [f for f in flows if f["net_lots"] > 0][:top_n]
+    top_sell = sorted([f for f in flows if f["net_lots"] < 0], key=lambda x: x["net_lots"])[:top_n]
+    return top_buy, top_sell
+
+
 def main():
     config = json.loads(CONFIG_PATH.read_text(encoding="utf-8"))
     today = date.today()
@@ -267,10 +311,18 @@ def main():
     etfs.sort(key=lambda c: (-c["dividend_yield_pct_est"], c["annualized_volatility_pct"]))
     etfs = etfs[: config["top_n_etf"]]
 
-    print("[4/4] 下載綠能環保類股資料 ...", flush=True)
+    print("[4/5] 下載綠能環保類股資料 ...", flush=True)
     green_top, green_as_of, green_total = fetch_green_energy_top10(
         config["green_energy_industry_code"], config["top_n_green_energy"]
     )
+
+    print("[5/5] 下載加權指數與三大法人買賣超 ...", flush=True)
+    taiex = fetch_taiex()
+    try:
+        top_buy, top_sell = fetch_institutional_flow(price_as_of, config["top_n_institutional"])
+    except RuntimeError as exc:
+        print(f"      三大法人資料抓取失敗,略過: {exc}")
+        top_buy, top_sell = [], []
 
     output = {
         "generated_at_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
@@ -280,6 +332,12 @@ def main():
             "as_of": green_as_of,
             "universe_count": green_total,
             "top": green_top,
+        },
+        "taiex": taiex,
+        "institutional_flow": {
+            "as_of": price_as_of,
+            "top_buy": top_buy,
+            "top_sell": top_sell,
         },
         "config": config,
     }

@@ -7,6 +7,7 @@
   "max_annualized_volatility_pct": 35.0,
   "top_n_etf": 30,
   "top_n_green_energy": 10,
+  "top_n_institutional": 10,
   "green_energy_industry_code": "35",
   "request_delay_seconds": 0.3,
   "exclude_bond_etfs": true

@@ -96,6 +96,13 @@ CSS = """
   .risk-bar.high > span { background: var(--warn); }
   .risk-num { font-variant-numeric: tabular-nums; font-size: .78rem; color: var(--ink-soft); width: 3.4em; text-align: right; }
   .gain-pill { display: inline-flex; align-items: center; gap: 3px; font-variant-numeric: tabular-nums; font-weight: 700; color: var(--good); }
+  .loss-pill { display: inline-flex; align-items: center; gap: 3px; font-variant-numeric: tabular-nums; font-weight: 700; color: var(--warn); }
+  .taiex-banner { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; border: 1px solid var(--rule); background: var(--surface); padding: 14px 18px; margin-bottom: 20px; }
+  .taiex-banner .label { font-size: .82rem; color: var(--ink-faint); }
+  .taiex-banner .value { font-family: "Noto Serif TC", serif; font-variant-numeric: tabular-nums; font-size: 1.5rem; font-weight: 700; }
+  .flow-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 640px) { .flow-grid { grid-template-columns: 1fr; } }
+  .flow-col h3 { font-size: .9rem; margin: 0 0 8px; color: var(--ink-soft); font-weight: 600; }
   .foot-note { font-size: .78rem; color: var(--ink-faint); margin-top: 10px; }
   .chart-wrap { border: 1px solid var(--rule); background: var(--surface); padding: 12px 16px 6px; overflow-x: auto; }
   .chart-wrap svg { display: block; min-width: 560px; width: 100%; height: auto; }
@@ -164,6 +171,13 @@ def green_row(r):
           <td class="num"><span class="gain-pill">{sign} {r['pct']:.2f}%</span></td></tr>"""
 
 
+def flow_row(r, kind):
+    cls = "gain-pill" if kind == "buy" else "loss-pill"
+    return f"""
+          <tr><td class="code">{esc(r['code'])}</td><td class="name">{esc(r['name'])}</td>
+          <td class="num"><span class="{cls}">{r['net_lots']:+,}</span></td></tr>"""
+
+
 def scatter_chart(etfs):
     left, right, top, bottom = 46, 620, 16, 340
     xmax, ymax = 35, max(18, (max((e["dividend_yield_pct_est"] for e in etfs), default=18) + 2))
@@ -213,6 +227,11 @@ def main():
     etfs = data["etfs"]
     green = data["green_energy"]
     cfg = data["config"]
+    taiex = data.get("taiex")
+    flow = data.get("institutional_flow") or {"top_buy": [], "top_sell": [], "as_of": None}
+    flow_buy = flow.get("top_buy") or []
+    flow_sell = flow.get("top_sell") or []
+    flow_as_of = flow.get("as_of") or "-"
 
     top_yield_etf = max(etfs, key=lambda e: e["dividend_yield_pct_est"], default=None)
     top_gainer = green["top"][0] if green["top"] else None
@@ -224,8 +243,22 @@ def main():
       <div class="stat"><div class="stat-num">{top_gainer['pct']:+.2f}%</div><div class="stat-label">綠能股單日漲幅王</div><div class="stat-sub">{esc(top_gainer['name'])}({esc(top_gainer['code'])})</div></div>
     </div>""" if top_yield_etf and top_gainer else ""
 
+    taiex_banner = ""
+    if taiex:
+        sign = "▲" if taiex["change"] >= 0 else "▼"
+        cls = "gain-pill" if taiex["change"] >= 0 else "loss-pill"
+        pct_txt = f"{taiex['pct']:+.2f}%" if taiex.get("pct") is not None else ""
+        taiex_banner = f"""
+  <div class="taiex-banner">
+    <span class="label">加權指數({esc(taiex['date'])})</span>
+    <span class="value">{taiex['value']:,.2f}</span>
+    <span class="{cls}">{sign} {taiex['change']:+,.2f} ({pct_txt})</span>
+  </div>"""
+
     etf_rows = "".join(etf_row(e) for e in etfs)
     green_rows = "".join(green_row(r) for r in green["top"])
+    flow_buy_rows = "".join(flow_row(r, "buy") for r in flow_buy) or '<tr><td colspan="3" class="foot-note">今日無資料</td></tr>'
+    flow_sell_rows = "".join(flow_row(r, "sell") for r in flow_sell) or '<tr><td colspan="3" class="foot-note">今日無資料</td></tr>'
 
     html_out = f"""<meta charset="utf-8">
 <title>季配息股票 / ETF 篩選報告</title>
@@ -250,6 +283,8 @@ def main():
       務必自行核實並評估風險,必要時諮詢持證顧問。
     </div>
   </div>
+
+  {taiex_banner}
 
   {stat_cards}
 
@@ -281,6 +316,29 @@ def main():
     <p class="intro-note">橫軸是近{cfg['volatility_lookback_months']}個月年化波動率(風險代理指標,越右邊波動越大),縱軸是推估年化殖利率(越上面殖利率越高)。左上角代表「殖利率較高、波動較低」,右下角相反。</p>
     {scatter_chart(etfs)}
     <div class="foot-note">座標依本頁上方 ETF 表格的「推估殖利率」與「近期波動率」繪製。</div>
+  </section>
+
+  <section class="report">
+    <div class="section-head">
+      <h2>三大法人買賣超排行</h2>
+      <span class="count">前{len(flow_buy)}/{len(flow_sell)}檔 · {esc(flow_as_of)} 收盤後公告</span>
+    </div>
+    <p class="intro-note">外資、投信、自營商三大法人當日買賣超合計排行(單位:張,1張=1000股),含個股與ETF。<strong>與上方「季配息」篩選條件無關</strong>,純粹是資金流向,不代表後市表現或公司基本面;ETF 常因造市/避險機制出現巨量買賣超,不一定代表法人對該標的看法。</p>
+    <div class="flow-grid">
+      <div class="flow-col">
+        <h3>買超最多</h3>
+        <div class="table-wrap">
+          <table><thead><tr><th>代號</th><th>名稱</th><th class="num">買超(張)</th></tr></thead><tbody>{flow_buy_rows}</tbody></table>
+        </div>
+      </div>
+      <div class="flow-col">
+        <h3>賣超最多</h3>
+        <div class="table-wrap">
+          <table><thead><tr><th>代號</th><th>名稱</th><th class="num">賣超(張)</th></tr></thead><tbody>{flow_sell_rows}</tbody></table>
+        </div>
+      </div>
+    </div>
+    <div class="foot-note">資料來源:TWSE 三大法人買賣超日報。買超/賣超張數為外資(不含自營商)、投信、自營商(含避險)三者合計後的淨額。</div>
   </section>
 
   <section class="report">

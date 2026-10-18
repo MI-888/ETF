@@ -87,6 +87,13 @@
   .risk-bar.high > span { background: var(--warn); }
   .risk-num { font-variant-numeric: tabular-nums; font-size: .78rem; color: var(--ink-soft); width: 3.4em; text-align: right; }
   .gain-pill { display: inline-flex; align-items: center; gap: 3px; font-variant-numeric: tabular-nums; font-weight: 700; color: var(--good); }
+  .loss-pill { display: inline-flex; align-items: center; gap: 3px; font-variant-numeric: tabular-nums; font-weight: 700; color: var(--warn); }
+  .taiex-banner { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; border: 1px solid var(--rule); background: var(--surface); padding: 14px 18px; margin-bottom: 20px; }
+  .taiex-banner .label { font-size: .82rem; color: var(--ink-faint); }
+  .taiex-banner .value { font-family: "Noto Serif TC", serif; font-variant-numeric: tabular-nums; font-size: 1.5rem; font-weight: 700; }
+  .flow-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 640px) { .flow-grid { grid-template-columns: 1fr; } }
+  .flow-col h3 { font-size: .9rem; margin: 0 0 8px; color: var(--ink-soft); font-weight: 600; }
   .foot-note { font-size: .78rem; color: var(--ink-faint); margin-top: 10px; }
   .chart-wrap { border: 1px solid var(--rule); background: var(--surface); padding: 12px 16px 6px; overflow-x: auto; }
   .chart-wrap svg { display: block; min-width: 560px; width: 100%; height: auto; }
@@ -119,6 +126,13 @@
       內容為依固定規則對台灣證交所公開數據做的機械式篩選,製作者不是持證財務顧問。
       務必自行核實並評估風險,必要時諮詢持證顧問。
     </div>
+  </div>
+
+  
+  <div class="taiex-banner">
+    <span class="label">加權指數(2026-10-16)</span>
+    <span class="value">47,111.26</span>
+    <span class="gain-pill">▲ +141.39 (+0.30%)</span>
   </div>
 
   
@@ -246,6 +260,69 @@
 
   <section class="report">
     <div class="section-head">
+      <h2>三大法人買賣超排行</h2>
+      <span class="count">前10/10檔 · 2026-10-16 收盤後公告</span>
+    </div>
+    <p class="intro-note">外資、投信、自營商三大法人當日買賣超合計排行(單位:張,1張=1000股),含個股與ETF。<strong>與上方「季配息」篩選條件無關</strong>,純粹是資金流向,不代表後市表現或公司基本面;ETF 常因造市/避險機制出現巨量買賣超,不一定代表法人對該標的看法。</p>
+    <div class="flow-grid">
+      <div class="flow-col">
+        <h3>買超最多</h3>
+        <div class="table-wrap">
+          <table><thead><tr><th>代號</th><th>名稱</th><th class="num">買超(張)</th></tr></thead><tbody>
+          <tr><td class="code">00919</td><td class="name">群益台灣精選高息</td>
+          <td class="num"><span class="gain-pill">+61,159</span></td></tr>
+          <tr><td class="code">2002</td><td class="name">中鋼</td>
+          <td class="num"><span class="gain-pill">+44,263</span></td></tr>
+          <tr><td class="code">2610</td><td class="name">華航</td>
+          <td class="num"><span class="gain-pill">+28,676</span></td></tr>
+          <tr><td class="code">00953B</td><td class="name">群益優選非投等債</td>
+          <td class="num"><span class="gain-pill">+26,775</span></td></tr>
+          <tr><td class="code">2317</td><td class="name">鴻海</td>
+          <td class="num"><span class="gain-pill">+23,160</span></td></tr>
+          <tr><td class="code">5880</td><td class="name">合庫金</td>
+          <td class="num"><span class="gain-pill">+22,810</span></td></tr>
+          <tr><td class="code">00961</td><td class="name">FT臺灣永續高息</td>
+          <td class="num"><span class="gain-pill">+22,126</span></td></tr>
+          <tr><td class="code">2409</td><td class="name">友達</td>
+          <td class="num"><span class="gain-pill">+20,447</span></td></tr>
+          <tr><td class="code">2883</td><td class="name">凱基金</td>
+          <td class="num"><span class="gain-pill">+18,503</span></td></tr>
+          <tr><td class="code">1802</td><td class="name">台玻</td>
+          <td class="num"><span class="gain-pill">+18,155</span></td></tr></tbody></table>
+        </div>
+      </div>
+      <div class="flow-col">
+        <h3>賣超最多</h3>
+        <div class="table-wrap">
+          <table><thead><tr><th>代號</th><th>名稱</th><th class="num">賣超(張)</th></tr></thead><tbody>
+          <tr><td class="code">00406A</td><td class="name">主動中信台灣收益</td>
+          <td class="num"><span class="loss-pill">-564,252</span></td></tr>
+          <tr><td class="code">00985A</td><td class="name">主動野村台灣50</td>
+          <td class="num"><span class="loss-pill">-141,911</span></td></tr>
+          <tr><td class="code">009816</td><td class="name">凱基台灣TOP50</td>
+          <td class="num"><span class="loss-pill">-77,919</span></td></tr>
+          <tr><td class="code">00927</td><td class="name">群益半導體收益</td>
+          <td class="num"><span class="loss-pill">-72,973</span></td></tr>
+          <tr><td class="code">00631L</td><td class="name">元大台灣50正2</td>
+          <td class="num"><span class="loss-pill">-72,399</span></td></tr>
+          <tr><td class="code">0050</td><td class="name">元大台灣50</td>
+          <td class="num"><span class="loss-pill">-57,179</span></td></tr>
+          <tr><td class="code">00412A</td><td class="name">主動安聯亞半導體</td>
+          <td class="num"><span class="loss-pill">-43,998</span></td></tr>
+          <tr><td class="code">00981A</td><td class="name">主動統一台股增長</td>
+          <td class="num"><span class="loss-pill">-41,823</span></td></tr>
+          <tr><td class="code">00685L</td><td class="name">群益臺灣加權正2</td>
+          <td class="num"><span class="loss-pill">-40,862</span></td></tr>
+          <tr><td class="code">00673R</td><td class="name">期元大S&amp;P原油反1</td>
+          <td class="num"><span class="loss-pill">-35,464</span></td></tr></tbody></table>
+        </div>
+      </div>
+    </div>
+    <div class="foot-note">資料來源:TWSE 三大法人買賣超日報。買超/賣超張數為外資(不含自營商)、投信、自營商(含避險)三者合計後的淨額。</div>
+  </section>
+
+  <section class="report">
+    <div class="section-head">
       <h2>綠能個股漲幅排行</h2>
       <span class="count">前10檔 · 綠能環保類股共27檔 · 2026-10-16 收盤</span>
     </div>
@@ -291,7 +368,7 @@
 
   <footer>
     <div>資料來源:台灣證券交易所(TWSE)公開 OpenAPI。本頁由 GitHub Actions 於每個交易日 14:30(台北時間)自動重新抓取並發布。</div>
-    <div>產生時間(UTC): 2026-10-18T07:48:26+00:00</div>
+    <div>產生時間(UTC): 2026-10-18T08:09:18+00:00</div>
     <div>本頁僅供參考,不構成要約、勸誘或投資建議;過去的配息與波動率不代表未來表現。</div>
   </footer>
 </div>
