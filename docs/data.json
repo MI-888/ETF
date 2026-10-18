@@ -1,0 +1,248 @@
+{
+  "generated_at_utc": "2026-10-18T07:48:26+00:00",
+  "price_as_of": "2026-10-16",
+  "etfs": [
+    {
+      "code": "00896",
+      "name": "中信綠能及電動車",
+      "price": 27.37,
+      "event_count_this_year": 3,
+      "dividend_yield_pct_est": 16.563146997929607,
+      "latest_distribution": {
+        "date": "2026-09-16",
+        "amount": 1.45
+      },
+      "next_distribution": {
+        "date": "2026-12-16",
+        "confirmed": false,
+        "days": 59
+      },
+      "annualized_volatility_pct": 28.912132307859554
+    },
+    {
+      "code": "009803",
+      "name": "玉山市值動能50",
+      "price": 20.99,
+      "event_count_this_year": 3,
+      "dividend_yield_pct_est": 10.481181515007146,
+      "latest_distribution": {
+        "date": "2026-09-15",
+        "amount": 0.9
+      },
+      "next_distribution": {
+        "date": "2026-12-15",
+        "confirmed": false,
+        "days": 58
+      },
+      "annualized_volatility_pct": 28.097002667905645
+    },
+    {
+      "code": "00905",
+      "name": "FT臺灣Smart",
+      "price": 26.87,
+      "event_count_this_year": 4,
+      "dividend_yield_pct_est": 9.333829549683662,
+      "latest_distribution": {
+        "date": "2026-07-16",
+        "amount": 1.058
+      },
+      "next_distribution": {
+        "date": "2026-10-19",
+        "confirmed": true,
+        "days": 1
+      },
+      "annualized_volatility_pct": 32.039045022890875
+    },
+    {
+      "code": "00921",
+      "name": "兆豐龍頭等權重",
+      "price": 24.0,
+      "event_count_this_year": 3,
+      "dividend_yield_pct_est": 8.833333333333334,
+      "latest_distribution": {
+        "date": "2026-09-16",
+        "amount": 1.0
+      },
+      "next_distribution": {
+        "date": "2026-12-16",
+        "confirmed": false,
+        "days": 59
+      },
+      "annualized_volatility_pct": 19.944978458936188
+    },
+    {
+      "code": "00984A",
+      "name": "主動安聯台灣高息",
+      "price": 16.0,
+      "event_count_this_year": 4,
+      "dividend_yield_pct_est": 8.275,
+      "latest_distribution": {
+        "date": "2026-07-16",
+        "amount": 0.415
+      },
+      "next_distribution": {
+        "date": "2026-10-19",
+        "confirmed": true,
+        "days": 1
+      },
+      "annualized_volatility_pct": 26.55751782574348
+    },
+    {
+      "code": "00956",
+      "name": "中信日經高股息",
+      "price": 13.79,
+      "event_count_this_year": 4,
+      "dividend_yield_pct_est": 7.686729514140682,
+      "latest_distribution": {
+        "date": "2026-07-16",
+        "amount": 0.3
+      },
+      "next_distribution": {
+        "date": "2026-10-19",
+        "confirmed": true,
+        "days": 1
+      },
+      "annualized_volatility_pct": 15.923849304705062
+    },
+    {
+      "code": "00771",
+      "name": "元大US高息特別股",
+      "price": 15.0,
+      "event_count_this_year": 3,
+      "dividend_yield_pct_est": 5.6000000000000005,
+      "latest_distribution": {
+        "date": "2026-08-21",
+        "amount": 0.21
+      },
+      "next_distribution": {
+        "date": "2026-11-20",
+        "confirmed": false,
+        "days": 33
+      },
+      "annualized_volatility_pct": 15.21583661826268
+    },
+    {
+      "code": "00932",
+      "name": "兆豐永續高息等權",
+      "price": 18.01,
+      "event_count_this_year": 3,
+      "dividend_yield_pct_est": 4.960207292245049,
+      "latest_distribution": {
+        "date": "2026-08-18",
+        "amount": 0.23
+      },
+      "next_distribution": {
+        "date": "2026-11-17",
+        "confirmed": false,
+        "days": 30
+      },
+      "annualized_volatility_pct": 12.557248756598913
+    },
+    {
+      "code": "00972",
+      "name": "野村日本動能高息",
+      "price": 22.42,
+      "event_count_this_year": 3,
+      "dividend_yield_pct_est": 4.222420457924471,
+      "latest_distribution": {
+        "date": "2026-09-16",
+        "amount": 0.22
+      },
+      "next_distribution": {
+        "date": "2026-12-16",
+        "confirmed": false,
+        "days": 59
+      },
+      "annualized_volatility_pct": 15.377045136065934
+    }
+  ],
+  "green_energy": {
+    "as_of": "2026-10-16",
+    "universe_count": 27,
+    "top": [
+      {
+        "code": "8476",
+        "name": "台境*",
+        "close": 21.5,
+        "change": 0.7,
+        "pct": 3.3653846153846154
+      },
+      {
+        "code": "8422",
+        "name": "可寧衛*",
+        "close": 25.7,
+        "change": 0.6,
+        "pct": 2.3904382470119523
+      },
+      {
+        "code": "6887",
+        "name": "寶綠特-KY",
+        "close": 35.15,
+        "change": 0.45,
+        "pct": 1.2968299711815563
+      },
+      {
+        "code": "6969",
+        "name": "成信實業*-創",
+        "close": 28.9,
+        "change": 0.35,
+        "pct": 1.2259194395796849
+      },
+      {
+        "code": "2072",
+        "name": "世紀風電",
+        "close": 128.5,
+        "change": 1.0,
+        "pct": 0.7843137254901961
+      },
+      {
+        "code": "6951",
+        "name": "青新-創",
+        "close": 68.0,
+        "change": 0.5,
+        "pct": 0.7407407407407408
+      },
+      {
+        "code": "8341",
+        "name": "日友",
+        "close": 74.6,
+        "change": 0.5,
+        "pct": 0.6747638326585695
+      },
+      {
+        "code": "6944",
+        "name": "兆聯實業",
+        "close": 792.0,
+        "change": 4.0,
+        "pct": 0.5076142131979695
+      },
+      {
+        "code": "6869",
+        "name": "雲豹能源",
+        "close": 71.4,
+        "change": 0.3,
+        "pct": 0.42194092827004215
+      },
+      {
+        "code": "5292",
+        "name": "華懋",
+        "close": 245.0,
+        "change": 1.0,
+        "pct": 0.4098360655737705
+      }
+    ]
+  },
+  "config": {
+    "max_lot_price": 30000,
+    "min_dividend_yield_pct": 4.0,
+    "min_events_for_quarterly": 3,
+    "max_events_for_quarterly": 4,
+    "volatility_lookback_months": 3,
+    "max_annualized_volatility_pct": 35.0,
+    "top_n_etf": 30,
+    "top_n_green_energy": 10,
+    "green_energy_industry_code": "35",
+    "request_delay_seconds": 0.3,
+    "exclude_bond_etfs": true
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "max_lot_price": 30000,
+  "min_dividend_yield_pct": 4.0,
+  "min_events_for_quarterly": 3,
+  "max_events_for_quarterly": 4,
+  "volatility_lookback_months": 3,
+  "max_annualized_volatility_pct": 35.0,
+  "top_n_etf": 30,
+  "top_n_green_energy": 10,
+  "green_energy_industry_code": "35",
+  "request_delay_seconds": 0.3,
+  "exclude_bond_etfs": true
+}
