@@ -125,7 +125,7 @@ def esc(s):
 
 
 def stock_url(code):
-    return f"https://www.twse.com.tw/zh/trading/historical/stock-day.html?stockNo={code}"
+    return f"https://tw.stock.yahoo.com/quote/{code}.TW"
 
 
 def stock_link_cell(code, text, cls):
