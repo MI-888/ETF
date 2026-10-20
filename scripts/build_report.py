@@ -79,6 +79,8 @@ CSS = """
   tbody tr:hover { background: var(--accent-wash); }
   .code { font-family: ui-monospace, Consolas, monospace; font-variant-numeric: tabular-nums; color: var(--ink-faint); font-size: .82rem; }
   .name { font-weight: 600; }
+  a.stock-link { color: inherit; text-decoration: none; border-bottom: 1px dashed transparent; }
+  a.stock-link:hover { color: var(--accent-deep); border-bottom-color: var(--accent-deep); }
   .num { font-variant-numeric: tabular-nums; text-align: right; }
   td.num, th.num { text-align: right; }
   .yield-pill { font-variant-numeric: tabular-nums; font-weight: 700; color: var(--accent-deep); }
@@ -122,6 +124,14 @@ def esc(s):
     return html.escape(str(s), quote=True)
 
 
+def stock_url(code):
+    return f"https://www.twse.com.tw/zh/trading/historical/stock-day.html?stockNo={code}"
+
+
+def stock_link_cell(code, text, cls):
+    return f'<a class="{cls} stock-link" href="{esc(stock_url(code))}" target="_blank" rel="noopener">{esc(text)}</a>'
+
+
 def risk_class(vol, warn_at=25, high_at=30):
     if vol >= high_at:
         return "high"
@@ -154,7 +164,7 @@ def etf_row(e):
         )
     return f"""
           <tr>
-            <td class="code">{esc(e['code'])}</td><td class="name">{esc(e['name'])}</td>
+            <td class="code">{stock_link_cell(e['code'], e['code'], 'code')}</td><td class="name">{stock_link_cell(e['code'], e['name'], 'name')}</td>
             <td class="num">{e['price']:.2f}</td>
             <td class="num"><span class="yield-pill">{e['dividend_yield_pct_est']:.2f}%</span></td>
             <td class="div-cell">{div_cell}</td>
@@ -166,7 +176,7 @@ def etf_row(e):
 def green_row(r):
     sign = "▲" if r["pct"] >= 0 else "▼"
     return f"""
-          <tr><td class="code">{esc(r['code'])}</td><td class="name">{esc(r['name'])}</td>
+          <tr><td class="code">{stock_link_cell(r['code'], r['code'], 'code')}</td><td class="name">{stock_link_cell(r['code'], r['name'], 'name')}</td>
           <td class="num">{r['close']:.2f}</td><td class="num">{r['change']:+.2f}</td>
           <td class="num"><span class="gain-pill">{sign} {r['pct']:.2f}%</span></td></tr>"""
 
@@ -174,7 +184,7 @@ def green_row(r):
 def flow_row(r, kind):
     cls = "gain-pill" if kind == "buy" else "loss-pill"
     return f"""
-          <tr><td class="code">{esc(r['code'])}</td><td class="name">{esc(r['name'])}</td>
+          <tr><td class="code">{stock_link_cell(r['code'], r['code'], 'code')}</td><td class="name">{stock_link_cell(r['code'], r['name'], 'name')}</td>
           <td class="num"><span class="{cls}">{r['net_lots']:+,}</span></td></tr>"""
 
 
