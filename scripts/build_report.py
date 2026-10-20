@@ -264,7 +264,7 @@ def main():
         pct_txt = f"{taiex['pct']:+.2f}%" if taiex.get("pct") is not None else ""
         taiex_banner = f"""
   <div class="taiex-banner">
-    <span class="label">加權指數({esc(taiex['date'])})</span>
+    <span class="label"><a class="stock-link" href="https://tw.stock.yahoo.com/quote/%5ETWII" target="_blank" rel="noopener">加權指數</a>({esc(taiex['date'])})</span>
     <span class="value">{taiex['value']:,.2f}</span>
     <span class="{cls}">{sign} {taiex['change']:+,.2f} ({pct_txt})</span>
   </div>"""
