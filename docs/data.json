@@ -1,15 +1,15 @@
 {
-  "generated_at_utc": "2026-10-21T07:16:59+00:00",
-  "price_as_of": "2026-10-20",
+  "generated_at_utc": "2026-10-22T06:26:28+00:00",
+  "price_as_of": "2026-10-21",
   "etfs": [
     {
       "code": "00896",
       "name": "中信綠能及電動車",
-      "price": 26.92,
-      "change": -0.16,
-      "change_pct": -0.5908419497784342,
+      "price": 27.4,
+      "change": 0.48,
+      "change_pct": 1.7830609212481425,
       "event_count_this_year": 3,
-      "dividend_yield_pct_est": 16.84001981178801,
+      "dividend_yield_pct_est": 16.54501216545012,
       "latest_distribution": {
         "date": "2026-09-16",
         "amount": 1.45
@@ -17,18 +17,18 @@
       "next_distribution": {
         "date": "2026-12-16",
         "confirmed": false,
-        "days": 56
+        "days": 55
       },
-      "annualized_volatility_pct": 28.394055529523442
+      "annualized_volatility_pct": 30.160506864055026
     },
     {
       "code": "009803",
       "name": "玉山市值動能50",
-      "price": 20.67,
-      "change": -0.19,
-      "change_pct": -0.9108341323106423,
+      "price": 20.9,
+      "change": 0.23,
+      "change_pct": 1.1127237542331885,
       "event_count_this_year": 3,
-      "dividend_yield_pct_est": 10.643444605708755,
+      "dividend_yield_pct_est": 10.526315789473683,
       "latest_distribution": {
         "date": "2026-09-15",
         "amount": 0.9
@@ -36,18 +36,18 @@
       "next_distribution": {
         "date": "2026-12-15",
         "confirmed": false,
-        "days": 55
+        "days": 54
       },
-      "annualized_volatility_pct": 27.99031223412758
+      "annualized_volatility_pct": 30.031464064395614
     },
     {
       "code": "00905",
       "name": "FT臺灣Smart",
-      "price": 25.54,
-      "change": -0.35,
-      "change_pct": -1.3518733101583622,
+      "price": 25.85,
+      "change": 0.31,
+      "change_pct": 1.2137823022709473,
       "event_count_this_year": 4,
-      "dividend_yield_pct_est": 9.819890368050118,
+      "dividend_yield_pct_est": 9.702127659574469,
       "latest_distribution": {
         "date": "2026-10-19",
         "amount": 0.6
@@ -55,18 +55,18 @@
       "next_distribution": {
         "date": "2027-01-18",
         "confirmed": false,
-        "days": 89
+        "days": 88
       },
-      "annualized_volatility_pct": 33.295495908887396
+      "annualized_volatility_pct": 34.34619278948579
     },
     {
       "code": "00921",
       "name": "兆豐龍頭等權重",
-      "price": 23.42,
-      "change": -0.34,
-      "change_pct": -1.430976430976431,
+      "price": 23.71,
+      "change": 0.29,
+      "change_pct": 1.238257899231426,
       "event_count_this_year": 3,
-      "dividend_yield_pct_est": 9.052092228864218,
+      "dividend_yield_pct_est": 8.941374947279629,
       "latest_distribution": {
         "date": "2026-09-16",
         "amount": 1.0
@@ -74,18 +74,18 @@
       "next_distribution": {
         "date": "2026-12-16",
         "confirmed": false,
-        "days": 56
+        "days": 55
       },
-      "annualized_volatility_pct": 21.040102200024528
+      "annualized_volatility_pct": 21.584890465066028
     },
     {
       "code": "00984A",
       "name": "主動安聯台灣高息",
-      "price": 15.01,
-      "change": -0.26,
-      "change_pct": -1.7026850032743943,
+      "price": 15.27,
+      "change": 0.26,
+      "change_pct": 1.73217854763491,
       "event_count_this_year": 4,
-      "dividend_yield_pct_est": 8.82078614257162,
+      "dividend_yield_pct_est": 8.670595939751147,
       "latest_distribution": {
         "date": "2026-10-19",
         "amount": 0.473
@@ -93,18 +93,18 @@
       "next_distribution": {
         "date": "2027-01-18",
         "confirmed": false,
-        "days": 89
+        "days": 88
       },
-      "annualized_volatility_pct": 29.520378046535967
+      "annualized_volatility_pct": 30.493895201037763
     },
     {
       "code": "00956",
       "name": "中信日經高股息",
-      "price": 13.46,
-      "change": -0.12,
-      "change_pct": -0.8836524300441826,
+      "price": 13.5,
+      "change": 0.04,
+      "change_pct": 0.2971768202080238,
       "event_count_this_year": 4,
-      "dividend_yield_pct_est": 7.87518573551263,
+      "dividend_yield_pct_est": 7.851851851851853,
       "latest_distribution": {
         "date": "2026-10-19",
         "amount": 0.3
@@ -112,18 +112,18 @@
       "next_distribution": {
         "date": "2027-01-18",
         "confirmed": false,
-        "days": 89
+        "days": 88
       },
-      "annualized_volatility_pct": 15.559178750856317
+      "annualized_volatility_pct": 15.401127417150812
     },
     {
       "code": "00771",
       "name": "元大US高息特別股",
-      "price": 14.92,
-      "change": -0.07,
-      "change_pct": -0.46697798532354906,
+      "price": 15.0,
+      "change": 0.08,
+      "change_pct": 0.5361930294906166,
       "event_count_this_year": 3,
-      "dividend_yield_pct_est": 5.630026809651474,
+      "dividend_yield_pct_est": 5.6000000000000005,
       "latest_distribution": {
         "date": "2026-08-21",
         "amount": 0.21
@@ -131,18 +131,18 @@
       "next_distribution": {
         "date": "2026-11-20",
         "confirmed": false,
-        "days": 30
+        "days": 29
       },
-      "annualized_volatility_pct": 14.862003796788063
+      "annualized_volatility_pct": 14.966948305261917
     },
     {
       "code": "00932",
       "name": "兆豐永續高息等權",
-      "price": 17.61,
-      "change": -0.17,
-      "change_pct": -0.9561304836895388,
+      "price": 17.72,
+      "change": 0.11,
+      "change_pct": 0.6246450880181715,
       "event_count_this_year": 3,
-      "dividend_yield_pct_est": 5.072875260268788,
+      "dividend_yield_pct_est": 5.041384499623778,
       "latest_distribution": {
         "date": "2026-08-18",
         "amount": 0.23
@@ -150,18 +150,18 @@
       "next_distribution": {
         "date": "2026-11-17",
         "confirmed": false,
-        "days": 27
+        "days": 26
       },
-      "annualized_volatility_pct": 11.878284010898488
+      "annualized_volatility_pct": 11.73245103040983
     },
     {
       "code": "00972",
       "name": "野村日本動能高息",
-      "price": 22.32,
-      "change": -0.12,
-      "change_pct": -0.53475935828877,
+      "price": 22.42,
+      "change": 0.1,
+      "change_pct": 0.4480286738351254,
       "event_count_this_year": 3,
-      "dividend_yield_pct_est": 4.241338112305854,
+      "dividend_yield_pct_est": 4.222420457924471,
       "latest_distribution": {
         "date": "2026-09-16",
         "amount": 0.22
@@ -169,197 +169,197 @@
       "next_distribution": {
         "date": "2026-12-16",
         "confirmed": false,
-        "days": 56
+        "days": 55
       },
-      "annualized_volatility_pct": 15.007344232805112
+      "annualized_volatility_pct": 15.039155072601362
     }
   ],
   "green_energy": {
-    "as_of": "2026-10-20",
+    "as_of": "2026-10-21",
     "universe_count": 27,
     "top": [
       {
-        "code": "6994",
-        "name": "富威電力",
-        "close": 27.05,
-        "change": 2.45,
-        "pct": 9.959349593495935
+        "code": "6944",
+        "name": "兆聯實業",
+        "close": 771.0,
+        "change": 16.0,
+        "pct": 2.119205298013245
       },
       {
-        "code": "3708",
-        "name": "上緯投控",
-        "close": 94.7,
-        "change": 1.6,
-        "pct": 1.7185821697099892
+        "code": "8422",
+        "name": "可寧衛*",
+        "close": 26.1,
+        "change": 0.35,
+        "pct": 1.3592233009708738
       },
       {
-        "code": "4582",
-        "name": "聚恆-創",
-        "close": 20.35,
-        "change": 0.25,
-        "pct": 1.243781094527363
+        "code": "2072",
+        "name": "世紀風電",
+        "close": 122.0,
+        "change": 1.5,
+        "pct": 1.2448132780082988
       },
       {
-        "code": "6771",
-        "name": "平和環保-創",
-        "close": 40.4,
-        "change": 0.2,
-        "pct": 0.49751243781094534
+        "code": "6947",
+        "name": "台鎔科技",
+        "close": 66.8,
+        "change": 0.8,
+        "pct": 1.2121212121212122
       },
       {
         "code": "5292",
         "name": "華懋",
-        "close": 245.5,
-        "change": 1.0,
-        "pct": 0.408997955010225
+        "close": 248.0,
+        "change": 2.5,
+        "pct": 1.0183299389002036
       },
       {
-        "code": "7610",
-        "name": "聯友金屬-創",
-        "close": 1410.0,
-        "change": 5.0,
-        "pct": 0.3558718861209964
-      },
-      {
-        "code": "8341",
-        "name": "日友",
-        "close": 74.6,
+        "code": "6969",
+        "name": "成信實業*-創",
+        "close": 28.0,
         "change": 0.2,
-        "pct": 0.2688172043010753
+        "pct": 0.7194244604316548
+      },
+      {
+        "code": "8438",
+        "name": "昶昕",
+        "close": 70.6,
+        "change": 0.5,
+        "pct": 0.7132667617689016
+      },
+      {
+        "code": "6869",
+        "name": "雲豹能源",
+        "close": 70.8,
+        "change": 0.5,
+        "pct": 0.7112375533428165
       },
       {
         "code": "9930",
         "name": "中聯資源",
-        "close": 58.8,
-        "change": 0.1,
-        "pct": 0.17035775127768316
+        "close": 59.2,
+        "change": 0.4,
+        "pct": 0.6802721088435374
       },
       {
-        "code": "6951",
-        "name": "青新-創",
-        "close": 67.9,
-        "change": -0.1,
-        "pct": -0.14705882352941177
-      },
-      {
-        "code": "8473",
-        "name": "山林水",
-        "close": 37.8,
-        "change": -0.1,
-        "pct": -0.2638522427440634
+        "code": "8341",
+        "name": "日友",
+        "close": 74.9,
+        "change": 0.3,
+        "pct": 0.4021447721179624
       }
     ]
   },
   "taiex": {
-    "date": "2026-10-20",
-    "value": 46292.93,
-    "change": -529.15,
-    "pct": -1.1301292039994806
+    "date": "2026-10-21",
+    "value": 46887.77,
+    "change": 594.84,
+    "pct": 1.284947831126697
   },
   "institutional_flow": {
-    "as_of": "2026-10-20",
+    "as_of": "2026-10-21",
     "top_buy": [
+      {
+        "code": "00985B",
+        "name": "群益ESG投等債0-5",
+        "net_lots": 102229
+      },
+      {
+        "code": "2409",
+        "name": "友達",
+        "net_lots": 56440
+      },
+      {
+        "code": "2317",
+        "name": "鴻海",
+        "net_lots": 27795
+      },
+      {
+        "code": "1303",
+        "name": "南亞",
+        "net_lots": 26525
+      },
       {
         "code": "3231",
         "name": "緯創",
-        "net_lots": 42703
+        "net_lots": 23988
       },
       {
-        "code": "2002",
-        "name": "中鋼",
-        "net_lots": 24567
+        "code": "3481",
+        "name": "群創",
+        "net_lots": 22234
       },
       {
-        "code": "1802",
-        "name": "台玻",
-        "net_lots": 18618
+        "code": "00919",
+        "name": "群益台灣精選高息",
+        "net_lots": 15142
       },
       {
         "code": "2324",
         "name": "仁寶",
-        "net_lots": 15952
+        "net_lots": 14619
       },
       {
-        "code": "00953B",
-        "name": "群益優選非投等債",
-        "net_lots": 13488
+        "code": "2891",
+        "name": "中信金",
+        "net_lots": 13084
       },
       {
-        "code": "00632R",
-        "name": "元大台灣50反1",
-        "net_lots": 12238
-      },
-      {
-        "code": "2353",
-        "name": "宏碁",
-        "net_lots": 12119
-      },
-      {
-        "code": "00664R",
-        "name": "國泰臺灣加權反1",
-        "net_lots": 11001
-      },
-      {
-        "code": "00961",
-        "name": "FT臺灣永續高息",
-        "net_lots": 8551
-      },
-      {
-        "code": "2356",
-        "name": "英業達",
-        "net_lots": 8526
+        "code": "2489",
+        "name": "瑞軒",
+        "net_lots": 12354
       }
     ],
     "top_sell": [
       {
         "code": "00406A",
         "name": "主動中信台灣收益",
-        "net_lots": -520623
-      },
-      {
-        "code": "00685L",
-        "name": "群益臺灣加權正2",
-        "net_lots": -232925
-      },
-      {
-        "code": "009816",
-        "name": "凱基台灣TOP50",
-        "net_lots": -132957
-      },
-      {
-        "code": "00631L",
-        "name": "元大台灣50正2",
-        "net_lots": -131116
-      },
-      {
-        "code": "0056",
-        "name": "元大高股息",
-        "net_lots": -87877
-      },
-      {
-        "code": "0050",
-        "name": "元大台灣50",
-        "net_lots": -82415
-      },
-      {
-        "code": "00415A",
-        "name": "主動群益核心50",
-        "net_lots": -72860
+        "net_lots": -256112
       },
       {
         "code": "00981A",
         "name": "主動統一台股增長",
-        "net_lots": -71409
+        "net_lots": -56383
       },
       {
-        "code": "00929",
-        "name": "復華台灣科技優息",
-        "net_lots": -50351
+        "code": "009816",
+        "name": "凱基台灣TOP50",
+        "net_lots": -39197
       },
       {
-        "code": "00919",
-        "name": "群益台灣精選高息",
-        "net_lots": -47348
+        "code": "00673R",
+        "name": "期元大S&P原油反1",
+        "net_lots": -34446
+      },
+      {
+        "code": "0050",
+        "name": "元大台灣50",
+        "net_lots": -26475
+      },
+      {
+        "code": "00685L",
+        "name": "群益臺灣加權正2",
+        "net_lots": -25593
+      },
+      {
+        "code": "00631L",
+        "name": "元大台灣50正2",
+        "net_lots": -20019
+      },
+      {
+        "code": "1802",
+        "name": "台玻",
+        "net_lots": -19817
+      },
+      {
+        "code": "00988A",
+        "name": "主動統一全球創新",
+        "net_lots": -17269
+      },
+      {
+        "code": "0056",
+        "name": "元大高股息",
+        "net_lots": -17069
       }
     ]
   },
