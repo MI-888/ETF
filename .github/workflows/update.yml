@@ -2,8 +2,9 @@ name: Update ETF dividend report
 
 on:
   schedule:
-    # 14:30 台北時間(UTC+8) = 06:30 UTC,週一到週五(交易日近似值,不排除國定假日)
-    - cron: "30 6 * * 1-5"
+    # 18:30 台北時間(UTC+8) = 10:30 UTC,週一到週五(交易日近似值,不排除國定假日)
+    # 延後至收盤後約5小時,避開 TWSE STOCK_DAY_ALL 開放資料尚未更新當日收盤價的空窗期
+    - cron: "30 10 * * 1-5"
   workflow_dispatch: {}
 
 permissions:
