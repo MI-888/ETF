@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-23T10:56:32+00:00",
+  "generated_at_utc": "2026-10-26T11:03:58+00:00",
   "price_as_of": "2026-10-22",
   "etfs": [
     {
@@ -17,7 +17,7 @@
       "next_distribution": {
         "date": "2026-12-16",
         "confirmed": false,
-        "days": 54
+        "days": 51
       },
       "annualized_volatility_pct": 30.160506864055026
     },
@@ -36,7 +36,7 @@
       "next_distribution": {
         "date": "2026-12-15",
         "confirmed": false,
-        "days": 53
+        "days": 50
       },
       "annualized_volatility_pct": 30.031464064395614
     },
@@ -55,7 +55,7 @@
       "next_distribution": {
         "date": "2027-01-18",
         "confirmed": false,
-        "days": 87
+        "days": 84
       },
       "annualized_volatility_pct": 34.34619278948579
     },
@@ -74,7 +74,7 @@
       "next_distribution": {
         "date": "2026-12-16",
         "confirmed": false,
-        "days": 54
+        "days": 51
       },
       "annualized_volatility_pct": 21.584890465066028
     },
@@ -93,7 +93,7 @@
       "next_distribution": {
         "date": "2027-01-18",
         "confirmed": false,
-        "days": 87
+        "days": 84
       },
       "annualized_volatility_pct": 30.493895201037763
     },
@@ -112,7 +112,7 @@
       "next_distribution": {
         "date": "2027-01-18",
         "confirmed": false,
-        "days": 87
+        "days": 84
       },
       "annualized_volatility_pct": 15.401127417150812
     },
@@ -131,7 +131,7 @@
       "next_distribution": {
         "date": "2026-11-20",
         "confirmed": false,
-        "days": 28
+        "days": 25
       },
       "annualized_volatility_pct": 14.966948305261917
     },
@@ -150,7 +150,7 @@
       "next_distribution": {
         "date": "2026-11-17",
         "confirmed": false,
-        "days": 25
+        "days": 22
       },
       "annualized_volatility_pct": 11.73245103040983
     },
@@ -169,7 +169,7 @@
       "next_distribution": {
         "date": "2026-12-16",
         "confirmed": false,
-        "days": 54
+        "days": 51
       },
       "annualized_volatility_pct": 15.039155072601362
     }
@@ -187,7 +187,7 @@
       },
       {
         "code": "2072",
-        "name": "世紀風電",
+        "name": "世紀能源",
         "close": 124.0,
         "change": 2.0,
         "pct": 1.639344262295082
