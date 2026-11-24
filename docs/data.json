@@ -1,7 +1,26 @@
 {
-  "generated_at_utc": "2026-11-23T22:09:01+00:00",
+  "generated_at_utc": "2026-11-24T20:45:50+00:00",
   "price_as_of": "2026-11-23",
   "etfs": [
+    {
+      "code": "00919",
+      "name": "群益台灣精選高息",
+      "price": 27.12,
+      "change": -0.37,
+      "change_pct": -1.3459439796289558,
+      "event_count_this_year": 3,
+      "dividend_yield_pct_est": 14.15929203539823,
+      "latest_distribution": {
+        "date": "2026-09-16",
+        "amount": 1.1
+      },
+      "next_distribution": {
+        "date": "2026-12-16",
+        "confirmed": false,
+        "days": 22
+      },
+      "annualized_volatility_pct": 33.575302852146585
+    },
     {
       "code": "00956",
       "name": "中信日經高股息",
@@ -17,9 +36,28 @@
       "next_distribution": {
         "date": "2027-01-18",
         "confirmed": false,
-        "days": 56
+        "days": 55
       },
-      "annualized_volatility_pct": 20.761395411292952
+      "annualized_volatility_pct": 20.20086390454406
+    },
+    {
+      "code": "00915",
+      "name": "凱基優選高股息30",
+      "price": 28.06,
+      "change": -0.14,
+      "change_pct": -0.4964539007092199,
+      "event_count_this_year": 3,
+      "dividend_yield_pct_est": 6.79496317415063,
+      "latest_distribution": {
+        "date": "2026-09-16",
+        "amount": 0.6
+      },
+      "next_distribution": {
+        "date": "2026-12-16",
+        "confirmed": false,
+        "days": 22
+      },
+      "annualized_volatility_pct": 34.24109284014881
     },
     {
       "code": "00771",
@@ -36,9 +74,9 @@
       "next_distribution": {
         "date": "2027-02-19",
         "confirmed": false,
-        "days": 88
+        "days": 87
       },
-      "annualized_volatility_pct": 13.889220088512772
+      "annualized_volatility_pct": 13.023632649329164
     },
     {
       "code": "00972",
@@ -55,9 +93,9 @@
       "next_distribution": {
         "date": "2026-12-16",
         "confirmed": false,
-        "days": 23
+        "days": 22
       },
-      "annualized_volatility_pct": 21.86121180719896
+      "annualized_volatility_pct": 22.24611815008989
     },
     {
       "code": "00717",
@@ -74,9 +112,9 @@
       "next_distribution": {
         "date": "2027-01-18",
         "confirmed": false,
-        "days": 56
+        "days": 55
       },
-      "annualized_volatility_pct": 23.227841506757027
+      "annualized_volatility_pct": 18.743480022283787
     }
   ],
   "green_energy": {
